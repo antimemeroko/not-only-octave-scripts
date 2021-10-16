@@ -14,7 +14,7 @@ besselZeros = [2.4048, 5.5201, 8.6537, 11.7915, 14.9309;
                7.5883, 11.0647, 14.3725, 17.6160, 20.8269;
                8.7715, 12.3386, 15.7002, 18.9801, 22.2178;];
 
-N = 70; # number of nodes in mesh grid
+N = 70; # number of nodes in one grid dimension
 
 xs = linspace(-1, 1, N); # x coordinates of nodes
 ys = xs; # y coordinates of nodes
@@ -38,7 +38,7 @@ axis vis3d; # fix viewpoint
 axis([-1 1 -1 1 -1 1]); # coordinates of start and end of a view direction vector
 
 hw = waitbar(0, '', 'CreateCancelBtn', 'delete(gcbf)'); # waitbar with cancel button
-while ishandle(hw)
+while 1
   t = t + dt;
 
   Z = A * heaviside(1.0 - (X.*X + Y.*Y)) .* ...
@@ -55,7 +55,7 @@ while ishandle(hw)
     else
         #update
         oldt = t;
-        waitbar(dt, hw, cstrcat("t = ", num2str(t)));
+        waitbar(0, hw, cstrcat("t = ", num2str(t)));
     endif
   endif
 endwhile
