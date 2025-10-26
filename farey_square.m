@@ -25,6 +25,9 @@ endfor
 
 scatter(numerators ./ denominators, 1 ./ denominators, 4, "b", "s");
 
+xlabel("1 / n");
+ylabel("m / n");
+
 axis equal;
 grid on;
 grid minor;
