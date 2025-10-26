@@ -1,11 +1,11 @@
 clear;
 
-# Plots scatter plot of x = m / n, y = 1 / n, with gcd(m, n) = 1
-# Pattern of straight line can be visible
-# which is in fact square representation of Farey numberes
-# See Chapter 1 of A. Hatcher, Topology of Numbers
+% Plots scatter plot of x = m / n, y = 1 / n, with gcd(m, n) = 1
+% Pattern of straight line can be visible
+% which is in fact square representation of Farey numbers
+% See Chapter 1 of A. Hatcher, Topology of Numbers
 
-N = 60; # >= 2
+N = 60; % >= 2
 
 numerators = [0 1 zeros(1, N - 2)];
 denominators = [1 1 zeros(1, N - 2)];
@@ -28,4 +28,3 @@ scatter(numerators ./ denominators, 1 ./ denominators, 4, "b", "s");
 axis equal;
 grid on;
 grid minor;
-
