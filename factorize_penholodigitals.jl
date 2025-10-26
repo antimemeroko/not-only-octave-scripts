@@ -6,6 +6,10 @@ using Nemo: factor
 
 using LinearAlgebra
 
+# Penholodigital number in base $b$ contains each non-zero digit, from $1$ to $b - 2$.
+# The smallest penholodigital number looks like $123\ldots (b-2)$.
+# In case $b = 0$ convention is that number is zero.
+
 penholodigitals_gen = zeros(BigInt, 64, 1);
 for i = 2:64
     penholodigitals_gen[i, 1] = dot(collect(1:i-1), i .^ collect(i-2:-1:0))
